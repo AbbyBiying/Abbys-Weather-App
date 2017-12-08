@@ -1,0 +1,14 @@
+<h1>Welcome to Abbys weather app!</h1>
+
+<div class="form">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+
+  <form method="post">
+    <label for="city_name">City Name</label>
+    <input type="text" name="city_name" id="city_name" value="<%= @location.city_name %>"><br>
+    <button type="submit">Submit</button>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+  </form>
+</div>
